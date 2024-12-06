@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #e1f5fe; /* Light blue background */
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+
+        p {
+            color: #666;
+            font-size: 16px;
+        }
+
+        .container {
+            background-color: #ffffff; /* White background for the container */
+            max-width: 400px;
+            margin: auto;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        }
+
+        .footer {
+            text-align: center;
+            font-size: 14px;
+            margin-top: 20px;
+        }
+
+        .greeting {
+            font-size: 14px;
+        }
+
+        /* Logo styling */
+        .logo {
+            display: block;
+            margin: 0 auto 20px; /* Center the logo */
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Welcome!</h1>
+    <p class="greeting">Dear <span th:text="${recipient}">--</span>,</p>
+    <div th:text="${message}">--</div>
+    <p class="footer">&copy; Pharmacy Management System, 2024</p>
+</div>
+</body>
+</html>

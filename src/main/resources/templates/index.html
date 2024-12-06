@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHARMACY MANAGEMENT SYSTEM</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap');
+
+        :root {
+            --primary-green: #28a745;
+            --secondary-green: #80e0a8;
+            --accent-green: #98ee99;
+            --dark-green: #155724;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f9fa;
+            min-height: 100vh;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Hero Section Background Animation */
+        .hero-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(rgba(40, 167, 69, 0.9), rgba(40, 167, 69, 0.8)), url('/path/to/your/pharmacy-background.jpg') center/cover;
+        }
+
+        /* Navigation Styling */
+        .navbar {
+            background: rgba(40, 167, 69, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 0.8rem 0;
+            border-bottom: 2px solid var(--accent-green);
+        }
+
+        .navbar-brand {
+            font-weight: 800;
+            font-size: 1.4rem;
+        }
+
+        .nav-link {
+            font-weight: 600;
+            text-transform: uppercase;
+            padding: 0.5rem 1rem;
+            margin: 0 0.3rem;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover {
+            background: var(--accent-green);
+            color: var(--dark-green) !important;
+        }
+
+        /* Hero Content Styling */
+        .hero-section {
+            padding: 140px 0 80px;
+            position: relative;
+        }
+
+        .hero-content {
+            background: rgba(40, 167, 69, 0.8);
+            border-radius: 30px;
+            padding: 3rem;
+            box-shadow: 0 0 30px rgba(40, 167, 69, 0.2);
+        }
+
+        h1 {
+            font-size: 3.8rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .lead {
+            font-size: 1.3rem;
+            color: #e0e0e0;
+            line-height: 1.8;
+        }
+
+        /* Button Styling */
+        .btn {
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.4s ease;
+        }
+
+        .btn-primary {
+            background: linear-gradient(45deg, var(--primary-green), var(--secondary-green));
+            border: none;
+            box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid var(--accent-green);
+            color: #fff;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(40, 167, 69, 0.4);
+        }
+
+        /* Footer Styling */
+        footer {
+            background: linear-gradient(to right, var(--dark-green), var(--primary-green));
+            padding: 1rem 0;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            .hero-content { padding: 2rem; }
+            .btn { padding: 0.8rem 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="hero-background"></div>
+
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand" th:href="@{/}">
+            <img src="https://pbs.twimg.com/profile_images/1788231088302653440/5xKfAdI8_200x200.jpg" width="50" height="50" alt="Pharmacy Logo"/>
+            Pharmacy Management System
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/register}" th:text="#{register}">Register</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/login}" th:text="#{login}">Login</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" data-bs-toggle="dropdown">
+                        <i class="fas fa-globe me-1"></i>
+                        <span th:text="${#locale.language == 'en' ? 'English' : #locale.language == 'rw' ? 'Kinyarwanda' : 'Français'}">Language</span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" th:href="@{''(lang=en)}">English</a></li>
+                        <li><a class="dropdown-item" th:href="@{''(lang=rw)}">Kinyarwanda</a></li>
+                        <li><a class="dropdown-item" th:href="@{''(lang=fr)}">Français</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<section class="hero-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10 hero-content">
+                <h1 class="mb-4" th:text="#{welcome_pharmacy}">Welcome to Pharmacy Management System</h1>
+                <p class="lead" th:text="#{experience_pharmacy}">Experience seamless management of pharmacy operations, track inventory, and manage prescriptions with ease.</p>
+                <div class="mt-5 d-flex gap-3 justify-content-center">
+                    <a th:href="@{/register}" class="btn btn-primary">
+                        <i class="fas fa-user-plus me-2"></i>
+                        <span th:text="#{register}">Register</span>
+                    </a>
+                    <a th:href="@{/login}" class="btn btn-secondary">
+                        <i class="fas fa-sign-in-alt me-2"></i>
+                        <span th:text="#{login}">Login</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container text-center">
+        <p class="m-0">© 2024 Pharmacy Management System. <span th:text="#{all_rights_reserved}">All Rights Reserved</span>.</p>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
