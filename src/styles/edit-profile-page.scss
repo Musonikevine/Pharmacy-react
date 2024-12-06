@@ -1,0 +1,62 @@
+.edit-profile-page {
+  .navbar {
+    background-color: #4CAF50; // Green background
+    color: white;
+
+    .navbar-brand,
+    .nav-link {
+      color: white;
+
+      &:hover {
+        color: #FFD700; // Yellow on hover
+      }
+    }
+  }
+
+  .card {
+    border: 1px solid #4CAF50; // Green border
+
+    .card-header {
+      background-color: #4CAF50; // Green header
+      color: white;
+    }
+
+    .btn-primary {
+      background-color: #FFD700; // Yellow button
+      border: none;
+
+      &:hover {
+        background-color: #FFC300; // Darker yellow on hover
+      }
+    }
+
+    .btn-secondary {
+      background-color: #4CAF50; // Green cancel button
+
+      &:hover {
+        background-color: #45a049; // Darker green on hover
+      }
+    }
+
+    .alert {
+      &.alert-info {
+        background-color: #f0f8ff; // Light blue for info alert
+        color: #333;
+      }
+
+      &.alert-danger {
+        background-color: #f8d7da; // Light red for danger alert
+        color: #721c24;
+      }
+    }
+  }
+
+  .form-control {
+    border: 1px solid #4CAF50; // Green border for inputs
+
+    &:focus {
+      border-color: #FFD700; // Yellow on focus
+      box-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
+    }
+  }
+}

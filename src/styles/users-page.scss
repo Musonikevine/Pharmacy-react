@@ -1,0 +1,107 @@
+.users-page {
+  background-color: #f9f9f9; // Light background color
+
+  nav {
+    background-color: #4CAF50; // Green navbar
+
+    .navbar-brand {
+      color: white;
+    }
+
+    .nav-link {
+      color: white;
+
+      &:hover {
+        color: #FFD700; // Yellow on hover
+      }
+    }
+  }
+
+  .container {
+    margin-top: 20px; // Adjust as necessary
+  }
+
+  .alert {
+    margin-bottom: 1rem;
+    border-radius: 5px;
+
+    &.alert-danger {
+      background-color: #f8d7da; // Light red for errors
+      color: #721c24; // Dark red text
+    }
+
+    &.alert-success {
+      background-color: #d4edda; // Light green for success
+      color: #155724; // Dark green text
+    }
+  }
+
+  .table-container {
+    .table {
+      border: 1px solid #4CAF50; // Green border for table
+
+      thead {
+        background-color: #4CAF50; // Green header
+        color: white;
+
+        th a {
+          color: white;
+
+          &:hover {
+            color: #FFD700; // Yellow on hover
+          }
+        }
+      }
+
+      tbody {
+        tr {
+          &:nth-child(even) {
+            background-color: #f2f2f2; // Light grey for even rows
+          }
+
+          td {
+            a.btn {
+              &.btn-primary {
+                background-color: #4CAF50; // Green button
+                border: none;
+
+                &:hover {
+                  background-color: #45a049; // Darker green on hover
+                }
+              }
+
+              &.btn-danger {
+                background-color: #dc3545; // Red button
+                border: none;
+
+                &:hover {
+                  background-color: #c82333; // Darker red on hover
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .pagination {
+    .page-link {
+      color: #4CAF50; // Green for pagination links
+
+      &:hover {
+        background-color: #FFD700; // Yellow on hover
+        color: #000; // Black text on hover
+      }
+
+      &.active {
+        background-color: #4CAF50; // Green for active page
+        color: white;
+      }
+
+      &.disabled {
+        color: #ccc; // Grey for disabled links
+      }
+    }
+  }
+}

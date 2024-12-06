@@ -1,0 +1,85 @@
+.home-page {
+  background-color: #f9f9f9; // Light background for the page
+
+  .hero-background {
+    background-color: #4CAF50; // Green hero background
+    height: 400px; // Adjust height as needed
+    position: relative;
+    overflow: hidden;
+  }
+
+  nav {
+    background-color: #4CAF50; // Green navbar
+    .navbar-brand {
+      color: white;
+    }
+
+    .nav-link {
+      color: white;
+
+      &:hover {
+        color: #FFD700; // Yellow on hover
+      }
+    }
+  }
+
+  .soccer-element {
+    // Style for floating soccer elements
+    background-color: rgba(255, 193, 7, 0.7); // Light yellow for soccer elements
+    border-radius: 50%;
+    position: absolute;
+    width: 100px; // Adjust size as needed
+    height: 100px; // Adjust size as needed
+    animation: float 3s ease-in-out infinite;
+
+    &.element-1 { top: 20%; left: 10%; }
+    &.element-2 { top: 50%; right: 10%; }
+    &.element-3 { bottom: 20%; left: 50%; }
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translatey(0);
+    }
+    50% {
+      transform: translatey(-20px);
+    }
+  }
+
+  .hero-section {
+    h1 {
+      color: #FFD700; // Yellow title color
+    }
+
+    .lead {
+      color: #333; // Dark text for readability
+    }
+
+    .btn-primary {
+      background-color: #4CAF50; // Green button
+      border: none;
+
+      &:hover {
+        background-color: #45a049; // Darker green on hover
+      }
+    }
+
+    .btn-secondary {
+      background-color: #FFD700; // Yellow button
+      border: none;
+
+      &:hover {
+        background-color: #FFC300; // Darker yellow on hover
+      }
+    }
+  }
+
+  footer {
+    background-color: #4CAF50; // Green footer
+    color: white;
+
+    p {
+      margin: 0;
+    }
+  }
+}

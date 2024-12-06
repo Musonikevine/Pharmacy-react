@@ -1,0 +1,84 @@
+.register-page {
+  background-color: #f9f9f9; // Light background color
+
+  nav {
+    background-color: #4CAF50; // Green navbar
+
+    .navbar-brand {
+      color: white;
+    }
+
+    .nav-link {
+      color: white;
+
+      &:hover {
+        color: #FFD700; // Yellow on hover
+      }
+    }
+  }
+
+  .registration-card {
+    background: rgba(255, 255, 255, 0.8); // Light glass effect
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+
+    .card-header {
+      background-color: #4CAF50; // Green header
+      color: white;
+      padding: 1rem;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+    }
+
+    .card-body {
+      .alert {
+        margin-bottom: 1rem;
+        border-radius: 5px;
+
+        &.alert-info {
+          background-color: #d9edf7; // Light blue for success
+          color: #31708f; // Dark blue text
+        }
+
+        &.alert-danger {
+          background-color: #f8d7da; // Light red for errors
+          color: #721c24; // Dark red text
+        }
+      }
+
+      .form-label {
+        color: #4CAF50; // Green label color
+      }
+
+      .form-control {
+        border: 1px solid #4CAF50; // Green border for inputs
+
+        &:focus {
+          border-color: #FFD700; // Yellow on focus
+          box-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
+        }
+      }
+
+      .btn-primary {
+        background-color: #4CAF50; // Green button
+        border: none;
+
+        &:hover {
+          background-color: #45a049; // Darker green on hover
+        }
+      }
+
+      .login-link {
+        color: #FFD700; // Yellow link color
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      .text-danger {
+        font-size: 0.875rem; // Adjust error message font size
+      }
+    }
+  }
+}
